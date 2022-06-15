@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cover-uncover image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="middle">
+        <div class="image">
+            <img src="image.jpg" class="img" alt="">
+            <div class="text">This photo may have a violent content</div>
+            <button onclick= "coverImage()" class="btn">Uncover image</button>
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementsByClassName('btn')[0],
+        text = document.getElementsByClassName('text')[0],
+        img = document.getElementsByClassName('img')[0],
+        c = 0;
+    function coverImage() {
+        if(c == 0){
+            btn.innerHTML = "Cover Image";
+            text.style.display = "none";
+            img.style.filter = "blur(0)"
+            c = 1;
+        }else{
+            btn.innerHTML = "Uncover Image";
+            text.style.display = "block";
+            img.style.filter = "blur(19px)";
+            c = 0;
+        }
+        
+    }
+    </script>
+</body>
+</html>
